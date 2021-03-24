@@ -50,6 +50,12 @@ model.1 <- lm(SIMS~ARM,data=data)
 summary.lm(model.1)
 ```
 
+```{r}
+newdata=data.frame(GRIP=94, ARM=88)
+predict(model.1, newdata, interval="prediction")
+```
+
+
 # now add the model fit to our plot
   
 ```{r}
@@ -82,6 +88,7 @@ cor(SIMS~GRIP,data=data)
 ```{r}
 model.2 <- lm(SIMS~GRIP,data=data)
 summary.lm(model.2)
+predict(model.2, newdata, interval="prediction")
 ```
 
 # now add the model fit to our plot
@@ -99,11 +106,15 @@ SIMS=-4.8+0.045*GRIP
 ```{r}
 model.3 <- lm(SIMS~ARM+GRIP,data=data)
 summary.lm(model.3)
+predict(model.3, newdata, interval="prediction")
 ```
 
 The equation for SIMS explained by ARM+GRIP is 
 SIMS=-5.43+0.037* ARM + 0.024*GRIP
 
+```{r}
+anova(model.1, model.3)
+```
 
 
-
+The pvalue is so small that we would reject the null hypothesis. 
