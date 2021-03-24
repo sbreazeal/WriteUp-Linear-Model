@@ -63,12 +63,12 @@ SIMS=-4.1+0.0545*ARM
 
 
 ```{r}
-basicNN <- ggplot(data,aes(y=SIMS,x=GRIP))
+basicGP <- ggplot(data,aes(y=SIMS,x=GRIP))
 ```
 ##Now add in scatterplot
 
 ```{r}
-basicNN + geom_point()
+basicGP + geom_point()
 ```
 
 # Numerical results
@@ -87,5 +87,9 @@ summary.lm(model.2)
 # now add the model fit to our plot
   
 ```{r}
-basicNN + geom_point() + geom_smooth(method=lm)
+basicGP + geom_point() + geom_smooth(method=lm)
 ``` 
+
+The equation for SIMS explained by GRIP is 
+SIMS=-4.8+0.045*GRIP
+
