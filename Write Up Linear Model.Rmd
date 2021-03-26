@@ -50,6 +50,9 @@ model.1 <- lm(SIMS~ARM,data=data)
 summary.lm(model.1)
 ```
 
+The adjusted R-squared of model1 is 0.467.
+
+
 ```{r}
 newdata=data.frame(GRIP=94, ARM=88)
 predict(model.1, newdata, interval="prediction")
@@ -90,6 +93,9 @@ model.2 <- lm(SIMS~GRIP,data=data)
 summary.lm(model.2)
 predict(model.2, newdata, interval="prediction")
 ```
+
+The adjusted R-squared of model 2 is 0.4053, being that this number is smaller than model1's adjusted R-squared it would show that model1 is a better fit.
+
 
 # now add the model fit to our plot
   
